@@ -29,7 +29,7 @@
             line-height: 1.6;
         }
 
-        /* لوحة التحكم العلوية وأيقونة المستخدم الرئيسي */
+        /* لوحة التحكم العلوية */
         .top-admin-bar {
             background-color: #0f172a;
             color: var(--white);
@@ -281,14 +281,14 @@
         </div>
 
         <!-- 1. بورتال الشركات وأصحاب الأعمال -->
-        <div id-portal-box="client" class="portal-box active">
+        <div id="portal-box-client" class="portal-box active">
             <form action="https://formspree.io" method="POST">
                 <div class="reg-notice" id="notice-client">💡 التسجيل اختياري: يمكنك تعبئة طلب استقدام أو توفير العمالة مباشرة دون الحاجة لإنشاء حساب مسبق في الموقع.</div>
                 
                 <input type="hidden" name="form_type" value="Client_Order">
                 
                 <div class="form-group">
-                    <label id="lbl-c-name">اسم الشركة / المنشأة المستفيدة *</label>
+                    <label id="lbl-brand-c-name">اسم الشركة / المنشأة المستفيدة *</label>
                     <input type="text" name="Company_Name" required placeholder="مثال: شركة الجابر للمقاولات">
                 </div>
                 <div class="form-group">
@@ -311,3 +311,4 @@
                     <label id="lbl-c-count">العدد المطلوب من العمال والموظفين *</label>
                     <input type="number" name="No_of_Vacancies" required min="1" placeholder="أدخل العدد">
                 </div>
+                <div class="form-group">
