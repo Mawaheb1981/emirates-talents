@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="html-tag">
 <head>
@@ -30,7 +29,6 @@ html
             line-height: 1.6;
         }
 
-        /* لوحة التحكم العلوية */
         .top-admin-bar {
             background-color: #0f172a;
             color: var(--white);
@@ -83,7 +81,6 @@ html
             color: var(--light-gold);
         }
 
-        /* نافذة الإجراءات المزدوجة - بورتال الشركات وبورتال الأفراد */
         .portal-tabs-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -149,10 +146,6 @@ html
             grid-column: span 2;
         }
 
-        @media (max-width: 768px) {
-            .form-group.full-width { grid-column: span 1; }
-        }
-
         label {
             margin-bottom: 6px;
             font-weight: 600;
@@ -200,15 +193,10 @@ html
             cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            button.btn-submit { grid-column: span 1; }
-        }
-
         button.btn-submit:hover {
             background-color: var(--primary-blue);
         }
 
-        /* شريط الشركاء الاستراتيجيين */
         .partners-section {
             margin-top: 50px;
             text-align: center;
@@ -217,7 +205,6 @@ html
         .partners-section h2 {
             color: var(--primary-blue);
             margin-bottom: 30px;
-            position: relative;
         }
 
         .partners-slider {
@@ -243,7 +230,6 @@ html
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         footer {
@@ -258,7 +244,6 @@ html
 </head>
 <body>
 
-    <!-- لوحة الإدارة العلوية والتحكم التلقائي -->
     <div class="top-admin-bar">
         <button class="admin-icon-btn" onclick="triggerAdminEdit()">
             ⚙️ <span id="admin-text">لوحة المستخدم الرئيسي (تعديل البيانات)</span>
@@ -275,17 +260,16 @@ html
 
     <div class="container">
         
-        <!-- ألسنة التبديل بين البوابتين -->
         <div class="portal-tabs-container">
             <button class="portal-tab active" id="tab-client" onclick="switchPortal('client')">🏢 بوابة أصحاب الأعمال والشركات (طلب عمالة)</button>
             <button class="portal-tab" id="tab-candidate" onclick="switchPortal('candidate')">💼 بوابة الباحثين عن عمل (تسجيل البيانات والـ CV)</button>
         </div>
 
-        <!-- 1. بورتال الشركات وأصحاب الأعمال -->
+        <!-- 1. بورتال الشركات -->
         <div id="portal-box-client" class="portal-box active">
+            <!-- استبدل الرابط في الأسفل برابط Formspree الخاص بك -->
             <form action="https://formspree.io" method="POST">
                 <div class="reg-notice" id="notice-client">💡 التسجيل اختياري: يمكنك تعبئة طلب استقدام أو توفير العمالة مباشرة دون الحاجة لإنشاء حساب مسبق في الموقع.</div>
-                
                 <input type="hidden" name="form_type" value="Client_Order">
                 
                 <div class="form-group">
@@ -313,168 +297,9 @@ html
                     <input type="number" name="No_of_Vacancies" required min="1" placeholder="أدخل العدد">
                 </div>
                 <div class="form-group">
-يُرجى استخدام الرمز البرمجي بحذر.
-الصناعة أو النشاط التجاري *
-مقاولات وبناء (ماسون، نجار)
-كوادر طبية مساعدة وفنيين
-فنيين متخصصين وميكانيكي
-عمالة ماهرة ومتخصصة
-عمالة عامة وتشغيلية (غير ماهرة)
-أنشطة توريد خارجية (عالمياً)
-
-
-الراتب الأساسي المرصود (لكل موظف) *
-الامتيازات والبدلات الأخرى المقدمة (السكن، النقل, الطعام..) *
-بيانات التواصل ومسؤول التوظيف *
-إرسال طلب استقدام العمالة وتحديث لوحة الإكسل
-
-💡 التسجيل اختياري: يمكنك تقديم سيرتك الذاتية وإدخال بياناتك الوظيفية والمالية فوراً دون الالتزام بإنشاء حساب.
-الاسم الكامل الفعلي / Full Name *
-التخصص / Specialist *
-الوظيفة المستهدفة / Target Position *
-فترة الخبرة الإجمالية / Experience Period *
-القطاع أو الصناعة / Industry *
-مكان الإقامة الحالي / Location *
-رخصة القيادة / Driving License *
-نعم / متوفرة
-لا / غير متوفرة
-
-
-الحالة الإقائية بالدولة / Visa Status *
-الراتب الحالي / Current Salary
-الراتب المتوقع / Expected Salary *
-الجنسية / Nationality *
-اللغات المتقنة / Language *
-رقم الهاتف والواتساب / Mobile *
-البريد الإلكتروني / Email *
-تقديم الملف وتحديث قاعدة البيانات الفورية
-
-شركاؤنا الاستراتيجيون في النجاح
-
-ADNOC | أدنوك
-ENOC | اينوك
-EMAAR | إعمار
-BinGhatti | بن غاطي
-Carrefour | كارفور
-Al Jaber | الجابر للمقاولات
-Hilton | سلسلة هيلتون
-Al Nasr Club | نادي النصر
-Al Ain Club | نادي العين
-Al Qahood Hosp. | مستشفى القرهود
-Burjeel Hosp. | مستشفى برجيل
-Emirates Hosp. | مستشفى الإمارات
-Lulu Market | أسواق اللولو
-Nesto | سلسلة نيستو
-Madina Hyper | هايبر ماركت المدينة
-
-
-وكالة مواهب الإمارات للتوظيف والوساطة الإدارية | هاتف: 00971502552350 | إيميل: hazem@theboard.ae
-// آلية التبديل الموثوقة بين البوابتين
-function switchPortal(portalType) {
-document.querySelectorAll('.portal-tab').forEach(tab => tab.classList.remove('active'));
-document.querySelectorAll('.portal-box').forEach(box => box.classList.remove('active'));
-if(portalType === 'client') {
-document.getElementById('tab-client').classList.add('active');
-document.getElementById('portal-box-client').classList.add('active');
-} else {
-document.getElementById('tab-candidate').classList.add('active');
-document.getElementById('portal-box-candidate').classList.add('active');
-}
-}
-// تحرير وتعديل لوحة التحكم للمستخدم الرئيسي (تعمل الآن بكفاءة)
-function triggerAdminEdit() {
-let password = prompt("يرجى إدخال رمز التحقق الخاص بالمستخدم الرئيسي لإجراء التعديلات الوظيفية:");
-if (password === "admin123") {
-alert("تم التحقق بنجاح! تم فتح قفل واجهة المستخدم الرئيسي. يمكنك الآن تعديل أي نص أو حقل أو اسم شركة في الصفحة بالنقر عليه مباشرة ومسحه أو الكتابة فوقه.");
-document.body.contentEditable = "true";
-document.body.style.border = "4px dashed #b28a30";
-} else {
-alert("الرمز غير صحيح. صلاحيات التعديل مقيدة للمستخدم الرئيسي فقط.");
-}
-}
-// الترجمة الفورية ثنائية اللغة المصلحة
-const translations = {
-ar: {
-dir: "rtl", lang: "ar", btn: "English",
-admin: "لوحة المستخدم الرئيسي (تعديل البيانات)",
-title: "مواهب الإمارات لحلول القوى العاملة",
-subtitle: "بوابة الأتمتة الموحدة للشركات وأصحاب الأعمال والباحثين عن وظائف",
-tabC: "🏢 بوابة أصحاب الأعمال والشركات (طلب عمالة)",
-tabCand: "💼 بوابة الباحثين عن عمل (تسجيل البيانات والـ CV)",
-partners: "شركاؤنا الاستراتيجيون في النجاح",
-notC: "💡 التسجيل اختياري: يمكنك تعبئة طلب استقدام أو توفير العمالة مباشرة دون الحاجة لإنشاء حساب مسبق في الموقع.",
-notCand: "💡 التسجيل اختياري: يمكنك تقديم سيرتك الذاتية وإدخال بياناتك الوظيفية والمالية فوراً دون الالتزام بإنشاء حساب.",
-footer: "وكالة مواهب الإمارات للتوظيف والوساطة الإدارية | هاتف: 00971502552350 | إيميل: hazem@theboard.ae",
-cName: "اسم الشركة / المنشأة المستفيدة *", cLoc: "موقع العمل الفعلي داخل الدولة *", cTitle: "المسمى الوظيفي المطلوب *",
-cCount: "العدد المطلوب من العمال والموظفين *", cInd: "الصناعة أو النشاط التجاري *", cSal: "الراتب الأساسي المرصود (لكل موظف) *",
-cBen: "الامتيازات والبدلات الأخرى المقدمة (السكن، النقل، الطعام..) *", cContact: "بيانات التواصل ومسؤول التوظيف *", btnC: "إرسال طلب استقدام العمالة وتحديث لوحة الإكسل",
-canName: "الاسم الكامل الفعلي / Full Name *", canSpec: "التخصص / Specialist *", canTarget: "الوظيفة المستهدفة / Target Position *",
-canPeriod: "فترة الخبرة الإجمالية / Experience Period *", canInd: "القطاع أو الصناعة / Industry *", canLoc: "مكان الإقامة الحالي / Location *",
-canDl: "رخصة القيادة / Driving License *", canVisa: "الحالة الإقائية بالدولة / Visa Status *", canCurSal: "الراتب الحالي / Current Salary",
-canExpSal: "الراتب المتوقع / Expected Salary *", canNat: "الجنسية / Nationality *", canLang: "اللغات المتقنة / Language *",
-canMob: "رقم الهاتف والواتساب / Mobile *", canEmail: "البريد الإلكتروني / Email *", btnCand: "تقديم الملف وتحديث قاعدة البيانات الفورية"
-},
-en: {
-dir: "ltr", lang: "en", btn: "العربية",
-admin: "Main User Dashboard (Edit Data Content)",
-title: "Emirates Talents Workforce Solutions",
-subtitle: "Automated Unified Portal for Corporate Clients and Job Seekers",
-tabC: "🏢 Corporate & Client Portal (Order Labor)",
-tabCand: "💼 Candidates & Job Seekers Portal (Submit Info & CV)",
-partners: "Our Strategic Partners in Success",
-notC: "💡 Registration Optional: You can submit your staffing requirements directly without creating a profile.",
-notCand: "💡 Registration Optional: You can upload your operational details directly without compulsory signup.",
-footer: "Emirates Talents Recruitment Agency | Mobile: 00971502552350 | Email: hazem@theboard.ae",
-cName: "Company / Facility Name *", cLoc: "Work Location Inside UAE *", cTitle: "Required Target Position *",
-cCount: "Required Number of Workers *", cInd: "Industry or Business Activity *", cSal: "Basic Offered Salary (Per Worker) *",
-cBen: "Other Allowances & Benefits (Housing, Transport, Food..) *", cContact: "Contact Info & HR Representative *", btnC: "Submit Labor Request & Update Excel",
-canName: "Full Name (As in Passport) *", canSpec: "Specialist / Field *", canTarget: "Target Position *",
-canPeriod: "Total Experience Period *", canInd: "Industry Sector *", canLoc: "Current Residence Location *",
-canDl: "Driving License Status *", canVisa: "Visa Status inside UAE *", canCurSal: "Current Salary",
-canExpSal: "Expected Salary *", canNat: "Nationality *", canLang: "Spoken Languages *",
-canMob: "Mobile & WhatsApp Number *", canEmail: "Email Address *", btnCand: "Submit Application & Live Database Update"
-}
-};
-let currentLang = 'ar';
-function toggleLanguage() {
-currentLang = currentLang === 'ar' ? 'en' : 'ar';
-const data = translations[currentLang];
-document.getElementById('html-tag').setAttribute('lang', data.lang);
-document.getElementById('html-tag').setAttribute('dir', data.dir);
-document.getElementById('langBtn').innerText = data.btn;
-document.getElementById('admin-text').innerText = data.admin;
-document.getElementById('main-title').innerText = data.title;
-document.getElementById('main-subtitle').innerText = data.subtitle;
-document.getElementById('tab-client').innerText = data.tabC;
-document.getElementById('tab-candidate').innerText = data.tabCand;
-document.getElementById('partners-title').innerText = data.partners;
-document.getElementById('notice-client').innerText = data.notC;
-document.getElementById('notice-cand').innerText = data.notCand;
-document.getElementById('lbl-footer').innerText = data.footer;
-// استمارة الشركات
-document.getElementById('lbl-brand-c-name').innerText = data.cName;
-document.getElementById('lbl-c-loc').innerText = data.cLoc;
-document.getElementById('lbl-c-title').innerText = data.cTitle;
-document.getElementById('lbl-c-count').innerText = data.cCount;
-document.getElementById('lbl-c-ind').innerText = data.cInd;
-document.getElementById('lbl-c-sal').innerText = data.cSal;
-document.getElementById('lbl-c-ben').innerText = data.cBen;
-document.getElementById('lbl-c-contact').innerText = data.cContact;
-document.getElementById('btn-submit-c').innerText = data.btnC;
-// استمارة الأفراد
-document.getElementById('lbl-can-name').innerText = data.canName;
-document.getElementById('lbl-can-spec').innerText = data.canSpec;
-document.getElementById('lbl-can-target').innerText = data.canTarget;
-document.getElementById('lbl-can-period').innerText = data.canPeriod;
-document.getElementById('lbl-can-ind').innerText = data.canInd;
-document.getElementById('lbl-can-loc').innerText = data.canLoc;
-document.getElementById('lbl-can-dl').innerText = data.canDl;
-document.getElementById('lbl-can-visa').innerText = data.canVisa;
-document.getElementById('lbl-can-cur-sal').innerText = data.canCurSal;
-document.getElementById('lbl-can-exp-sal').innerText = data.canExpSal;
-document.getElementById('lbl-can-nat').innerText = data.canNat;
-document.getElementById('lbl-can-lang').innerText = data.canLang;
-document.getElementById('lbl-can-mob').innerText = data.canMob;
-document.getElementById('lbl-can-email').innerText = data.canEmail;
-document.getElementById('btn-submit-cand').innerText = data.btnCand;
-}
+                    <label id="lbl-c-ind">الصناعة أو النشاط التجاري *</label>
+                    <select name="Man_Power_Type" required>
+                        <option value="Construction">مقاولات وبناء (ماسون، نجار)</option>
+                        <option value="Healthcare">كوادر طبية مساعدة وفنيين</option>
+                        <option value="Technical">فنيين متخصصين وميكانيكي</option>
+                        <option value="Skilled">عمالة ماهرة ومتخصصة</option>
