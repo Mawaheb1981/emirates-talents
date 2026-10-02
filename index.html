@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواهب الإمارات | Emirates Talents</title>
+    <style>
+        :root {
+            --primary-blue: #1a365d;
+            --light-blue: #f0f4f8;
+            --dark-gold: #b28a30;
+            --light-gold: #dfba6b;
+            --text-dark: #2d3748;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-blue);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #0f2340);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--dark-gold);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--light-gold);
+        }
+
+        nav {
+            background-color: var(--primary-blue);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--light-gold);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .intro-box {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-right: 5px solid var(--dark-gold);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-right: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .portal-section {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .portal-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            form { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .form-group.full-width { grid-column: span 1; }
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--dark-gold);
+            box-shadow: 0 0 5px rgba(178, 138, 48, 0.3);
+        }
+
+        button {
+            grid-column: span 2;
+            background-color: var(--dark-gold);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            button { grid-column: span 1; }
+        }
+
+        button:hover {
+            background-color: #947125;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            margin-top: 5px;
+            border-top: 5px solid var(--dark-gold);
+        }
+
+        .contact-info a {
+            color: var(--light-gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مواهب الإمارات | Emirates Talents</h1>
+        <p>حلول سريعة وموثوقة لتوفير القوى العاملة في كل إمارات الدولة</p>
+    </header>
+
+    <nav>
+        <a href="#about">عن الوكالة</a>
+        <a href="#services">خدماتنا وأنشطتنا</a>
+        <a href="#portal">بوابة الباحثين عن عمل</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- عن الوكالة -->
+        <section id="about" class="intro-box">
+            <h2>من نحن</h2>
+            <p>وكالة توظيف داخل دولة الإمارات ملتزمة بتغطية احتياجات منشآتك بدقة وفق متطلبات بيئة العمل في الدولة، سواء كنت تبحث عن عمال تشغيل، فنيين متخصصين، أو كوادر طبية مساعدة.</p>
+        </section>
+
+        <!-- الأنشطة ودد التوريد -->
+        <div class="grid" id="services">
+            <div class="card">
+                <h3>⏱️ مدة التوريد الإستراتيجية</h3>
+                <ul>
+                    <li><strong>داخل دولة الإمارات:</strong> من 3 إلى 7 أيام.</li>
+                    <li><strong>خارج دولة الإمارات:</strong> حتى 15 يوم عمل.</li>
+                    <li><strong>نطاق الخدمة:</strong> نخدم جميع إمارات الدولة السبع.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>✅ القوى العاملة والأنشطة المتاحة</h3>
+                <ul>
+                    <li>عمال (غير مهرة / نصف مهرة / مهرة)</li>
+                    <li>فنيين متخصصين، ميكانيكي، نجار</li>
+                    <li>قطاع البناء والتشييد: ماسون (بناء)</li>
+                    <li>أطقم مساعدين للمهن الطبية</li>
+                    <li>فنيين مخابر تحاليل وتصوير أشعة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- بوابة التسجيل والباحثين عن عمل -->
+        <section id="portal" class="portal-section">
+            <h2>💼 بوابة الباحثين عن عمل | Job Seekers Portal</h2>
+            <p style="text-align: center; margin-bottom: 25px; color: #718096;">سجل بياناتك الشخصية والوظيفية للانضمام إلى شبكة الكفاءات لدينا</p>
+            
+            <!-- تم ربط النموذج مباشرة ببريدك الإلكتروني عبر Formspree مجاناً أو استبدله بـ Action مخصص -->
+            <form action="https://formspree.io" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">الاسم الكامل / Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك الثلاثي">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني / Email *</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="example@domain.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف / Mobile Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="00971500000000">
+                </div>
+
+                <div class="form-group">
+                    <label for="job-category">التخصص الوظيفي / Job Category *</label>
+                    <select id="job-category" name="category" required>
+                        <option value="">اختر مجال كفاءتك...</option>
+                        <option value="medical">أطقم طبية مساعدة وفنيين</option>
+                        <option value="technician">فني متخصص / ميكانيكي</option>
+                        <option value="construction">ماسون (بناء) / نجار</option>
+                        <option value="skilled-labor">عمالة ماهرة</option>
+                        <option value="general-labor">عمالة عامة ونصف ماهرة</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="experience">الملخص المهني وأبرز الخبرات / Professional Summary</label>
+                    <textarea id="experience" name="experience" rows="4" placeholder="اكتب نبذة مختصرة عن خبراتك السابقة ومتطلباتك الوظيفية..."></textarea>
+                </div>
+
+                <!-- توجيه خفي لإرسال البيانات مباشرة إلى بريدك الإلكتروني المعتمد -->
+                <input type="hidden" name="_to" value="hazem@theboard.ae">
+
+                <button type="submit">إرسال الطلب والانضمام للوكالة | Submit Application</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <p>تواصل معنا اليوم للحصول على قوى عاملة مناسبة بسرعة وباحترافية</p>
+            <p>📞 الهاتف: <strong>00971502552350</strong> | ✉️ البريد الإلكتروني: <a href="mailto:hazem@theboard.ae">hazem@theboard.ae</a></p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: var(--light-gold);">© 2026 مواهب الإمارات. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
